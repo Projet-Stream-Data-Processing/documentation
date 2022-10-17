@@ -4,6 +4,7 @@
 version: '3'
 services:
   mediawiki:
+    container_name: mediawiki
     image: mediawiki
     restart: always
     ports:
@@ -18,6 +19,7 @@ services:
       - ./LocalSettings.php:/var/www/html/LocalSettings.php
   # This key also defines the name of the database host used during setup instead of the default "localhost"
   database:
+    container_name: mediawiki_db
     image: mariadb
     restart: always
     environment:

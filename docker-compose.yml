@@ -12,7 +12,7 @@ services:
     links:
       - database
     volumes:
-      - images:/var/www/html/images
+      - ./images:/var/www/html/images
       # After initial setup, download LocalSettings.php to the same directory as
       # this yaml and uncomment the following line and use compose to restart
       # the mediawiki service
@@ -31,8 +31,4 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - db:/var/lib/mysql
-
-volumes:
-  images:
-  db:
+      - ./db:/var/lib/mysql
